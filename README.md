@@ -69,6 +69,17 @@ Hyperparameter tuning was performed using **RandomizedSearchCV** with **5-fold S
 
 Although Random Forest achieved the highest accuracy, all models performed close to the random baseline (~25%), indicating weak relationships between the available features and the target labels.
 
+## 🔎 Key Takeaways & Limitations
+
+The near-baseline accuracy (~25% for a 4-class problem) is itself a meaningful finding rather than a modeling failure. Several factors explain it:
+
+- **Weak feature–target signal:** Feature importance and correlation analysis showed that no single feature—or combination of features—had a strong relationship with the self-reported addiction level. The available behavioral and demographic variables simply do not separate the four classes well.
+- **Subjective, self-reported labels:** The target is based on users' *self-reported* addiction levels. Self-assessment is noisy and inconsistent between people, so two users with nearly identical usage patterns may report different levels—making the labels hard to predict from behavior alone.
+- **Consistency across models:** Logistic Regression, Decision Tree, and Random Forest all converged to similar scores. When models of very different complexity plateau at the same point, the ceiling is usually in the data, not the algorithm.
+- **Class overlap:** The confusion matrices showed heavy overlap between adjacent levels (e.g., Moderate vs. High), which is expected when the underlying classes are not clearly distinguishable.
+
+**Conclusion:** Predicting subjective smartphone-addiction levels from these features is inherently difficult. Improving performance would likely require richer or more objective data (e.g., longer-term usage logs, validated psychological assessment scores, or physiological signals) rather than more complex models.
+
 ## 🛠️ Technologies
 
 - Python
@@ -83,10 +94,10 @@ Although Random Forest achieved the highest accuracy, all models performed close
 ## 📂 Repository Structure
 
 ```
-├── Smartphone_Addiction_Final_with_live_demo.ipynb
-├── Smartphone_Addiction_Report.pdf
-├── README.md
-└── dataset/
+├── Smartphone_Addiction_with_live_demo.ipynb          # Full ML pipeline + live demo
+├── Smartphone Addiction Level Prediction report.pdf   # Project report
+├── SmartPhone addiction Level .pptx                   # Presentation slides
+└── README.md
 ```
 
 ## 👥 Team
