@@ -96,6 +96,3 @@ Although Random Forest achieved the highest accuracy, all models performed close
 - Aljohara Alsultan
 - Aljudy Altorkistani
 
-## 📄 License
-
-This project was developed as part of the **IT461 Machine Learning** course at **King Saud University**.
